@@ -1,33 +1,47 @@
 @import "tailwindcss";
 
+/* Explicit screen display rules ensuring buttons and audit trace are not inadvertently hidden */
+.print-verification-button {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.audit-trace {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 @media print {
   @page {
     size: A4 portrait;
-    margin: 1.5cm;
+    margin: 1.2cm;
   }
 
   html,
   body {
     background: #ffffff !important;
     color: #0f172a !important;
-    font-size: 12pt !important;
+    font-size: 11pt !important;
     margin: 0 !important;
     padding: 0 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  /* Hide screen elements */
+  /* Hide screen controls and interactive buttons */
   header,
   footer,
   nav,
   button,
+  .print-verification-button,
   .no-print {
     display: none !important;
     visibility: hidden !important;
   }
 
-  /* Show print-only elements */
+  /* Show print-only header and status */
   .print-only {
     display: block !important;
     visibility: visible !important;
@@ -35,11 +49,11 @@
 
   /* Printable card layout */
   .printable-card {
-    border: 1px solid #94a3b8 !important;
+    border: 1px solid #cbd5e1 !important;
     border-radius: 6px !important;
     box-shadow: none !important;
     margin: 0 auto !important;
-    padding: 24px !important;
+    padding: 20px !important;
     width: 100% !important;
     max-width: 100% !important;
     page-break-inside: avoid !important;
@@ -48,12 +62,18 @@
 
   /* Text and contrast adjustments for print */
   .printable-card * {
-    color: #0f172a !important;
     box-shadow: none !important;
   }
 
-  .printable-card .text-slate-500,
-  .printable-card .text-slate-600 {
-    color: #475569 !important;
+  .printable-card .audit-trace {
+    display: block !important;
+    visibility: visible !important;
+    page-break-inside: avoid !important;
+    border-top-color: #cbd5e1 !important;
+  }
+
+  .printable-card .audit-trace pre {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
   }
 }
