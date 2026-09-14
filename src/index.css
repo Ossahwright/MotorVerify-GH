@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 1.5cm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 12pt !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide screen elements */
+  header,
+  footer,
+  nav,
+  button,
+  .no-print {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Show print-only elements */
+  .print-only {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Printable card layout */
+  .printable-card {
+    border: 1px solid #94a3b8 !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    padding: 24px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    page-break-inside: avoid !important;
+    background: #ffffff !important;
+  }
+
+  /* Text and contrast adjustments for print */
+  .printable-card * {
+    color: #0f172a !important;
+    box-shadow: none !important;
+  }
+
+  .printable-card .text-slate-500,
+  .printable-card .text-slate-600 {
+    color: #475569 !important;
+  }
+}

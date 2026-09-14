@@ -1,0 +1,8 @@
+{
+  "name": "MOTORVERIFY GH",
+  "description": "Ghana's Motor Insurance Verification Platform using the National Insurance Commission Motor Insurance Database.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
+
